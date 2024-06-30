@@ -1,0 +1,120 @@
+# calculator.py
+
+import tkinter as tk
+from tkinter import messagebox
+from math import sqrt
+
+class Calculator:
+    def __init__(self, master):
+        self.master = master
+        master.title("Standard Calculator")
+
+        # Set background color to sky blue
+        master.configure(bg='#0077b6')
+
+        # Create entry field for user input
+        self.entry_field = tk.Entry(master, width=30, font=("Playwrite Mexico", 24), relief="sunken", borderwidth=5, bg="white", fg="black")
+        self.entry_field.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+
+        # Create number buttons
+        numbers = [
+            '7', '8', '9',
+            '4', '5', '6',
+            '1', '2', '3',
+            '0', '.', '='
+        ]
+        row_val = 1
+        col_val = 0
+        for number in numbers:
+            btn = tk.Button(master, text=number, width=5, font=("Playwrite Mexico", 18), command=lambda number=number: self.click_button(number), bg="black", fg="white")
+            btn.grid(row=row_val, column=col_val, padx=5, pady=5)
+            btn.bind("<Enter>", lambda event, btn=btn: btn.config(bg="#CAF0F8"))
+            btn.bind("<Leave>", lambda event, btn=btn: btn.config(bg="black"))
+            col_val += 1
+            if col_val > 3:
+                col_val = 0
+                row_val += 1
+
+        # Create operator buttons
+        operators = [
+            '/', '*',
+            '-', '+',
+            'Mod', '%',
+            '√', 'x²'
+        ]
+        row_val = 1
+        col_val = 4
+        for operator in operators:
+            btn = tk.Button(master, text=operator, width=5, font=("Playwrite Mexico", 18), command=lambda operator=operator: self.click_button(operator), bg="black", fg="white")
+            btn.grid(row=row_val, column=col_val, padx=5, pady=5)
+            btn.bind("<Enter>", lambda event, btn=btn: btn.config(bg="#CAF0F8"))
+            btn.bind("<Leave>", lambda event, btn=btn: btn.config(bg="black"))
+            row_val += 1
+            if row_val > 4:
+                row_val = 1
+                col_val += 1
+
+        # Create special buttons
+        special_buttons = [
+            'Back', 'Clear',
+            'Dec', '±'
+        ]
+        row_val = 5
+        col_val = 0
+        for button in special_buttons:
+            btn = tk.Button(master, text=button, width=5, font=("Playwrite Mexico", 18), command=lambda button=button: self.click_button(button), bg="black", fg="white")
+            btn.grid(row=row_val, column=col_val, padx=5, pady=5)
+            btn.bind("<Enter>", lambda event, btn=btn: btn.config(bg="#CAF0F8"))
+            btn.bind("<Leave>", lambda event, btn=btn: btn.config(bg="black"))
+            col_val += 1
+
+    def click_button(self, button):
+        if button == '=':
+            try:
+                result = eval(self.entry_field.get())
+                self.entry_field.delete(0, tk.END)
+                self.entry_field.insert(tk.END, result)
+            except Exception as e:
+                self.entry_field.delete(0, tk.END)
+                self.entry_field.insert(tk.END, "Error")
+        elif button == 'Mod':
+            self.entry_field.insert(tk.END, '%')
+        elif button == '%':
+            self.entry_field.insert(tk.END, '/100')
+        elif button == '√':
+            try:
+                result = sqrt(eval(self.entry_field.get()))
+                self.entry_field.delete(0, tk.END)
+                self.entry_field.insert(tk.END, result)
+            except Exception as e:
+                self.entry_field.delete(0, tk.END)
+                self.entry_field.insert(tk.END, "Error")
+        elif button == 'x²':
+            try:
+                result = eval(self.entry_field.get()) ** 2
+                self.entry_field.delete(0, tk.END)
+                self.entry_field.insert(tk.END, result)
+            except Exception as e:
+                self.entry_field.delete(0, tk.END)
+                self.entry_field.insert(tk.END, "Error")
+        elif button == 'Back':
+            self.entry_field.delete(len(self.entry_field.get())-1, tk.END)
+        elif button == 'Clear':
+            self.entry_field.delete(0, tk.END)
+        elif button == 'Dec':
+            self.entry_field.insert(tk.END, '.')
+        elif button == '±':
+            try:
+                result = -eval(self.entry_field.get())
+                self.entry_field.delete(0, tk.END)
+                self.entry_field.insert(tk.END, result)
+            except Exception as e:
+                self.entry_field.delete(0, tk.END)
+                self.entry_field.insert(tk.END, "Error")
+        else:
+            self.entry_field.insert(tk.END, button)
+
+root = tk.Tk()
+root.geometry("400x400")
+my_calculator = Calculator(root)
+root.mainloop()
