@@ -26,6 +26,9 @@ Eval Function: Used to evaluate mathematical expressions entered by the user. It
 Button Bindings: The buttons change color on hover to improve user experience.
 
 
+
+
+
 # Number Guessing Game
 
 This Python script code creates a graphical user interface (GUI) application for a number guessing game. The user is asked to guess a number between 1 and 100, and the application provides feedback on whether the guess is too high or too low until the correct number is guessed. The GUI is built using the Tkinter library.
@@ -117,3 +120,57 @@ Result Determination: The game logic determines the winner based on the choices.
 Score Update: The scores for the player and the computer are updated accordingly.
 
 Display Results: The choices and results are displayed on the screen.
+
+
+
+
+# Tic Tac Toe Game
+This Python script code creates a graphical user interface (GUI) application for the classic game of Tic Tac Toe. Two players can play against each other, taking turns to place their marks (⭕ and ❌) on a 3x3 grid.
+
+**Features**
+
+Two-player Game: Two players take turns to place their marks on the grid.
+
+Turn Indicator: The game displays whose turn it is.
+
+Win Detection: The game detects when a player wins.
+
+Draw Detection: The game detects when the game is a draw.
+
+Reset Button: Players can reset the game to start a new match.
+
+Message Boxes: Informative pop-up boxes to announce the winner or a draw.
+
+**Game Logic:**
+
+Click Method: Handles the player's move by updating the button text with the player's mark and checking for a win or draw.
+
+Check Win Method: Checks rows, columns, and diagonals for three matching marks to determine a win.
+
+Check Draw Method: Checks if all buttons are filled without a winner to determine a draw.
+
+Reset Method: Resets the game state, clearing all button texts and resetting the player's turn.
+
+**Main Components:**
+
+Tkinter: This library is used to create the GUI. It provides various widgets such as labels, buttons, and frames to build the interface.
+
+MessageBox: Utilized to display pop-up messages for game events like winning or drawing.
+
+Buttons: Represent the 3x3 grid where players place their marks. Buttons are dynamically created in a nested loop and stored in a 2D list.
+
+Labels: Used to display the current player's turn and game status.
+
+Reset Button: Allows the players to reset the game and start over.
+
+**User Interaction**
+
+Player Move: The current player clicks on an empty button to place their mark (⭕ or ❌).
+
+Turn Switch: The game switches the turn to the other player.
+
+Win/Draw Check: After each move, the game checks if there is a winner or if the game is a draw.
+
+Game Over: If a player wins or the game is a draw, the game displays the result and disables further moves until the reset button is clicked.
+
+Reset: Players can click the reset button to start a new game.
