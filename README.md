@@ -4,7 +4,7 @@ This GitHub repo showcases Python projects created during my internship at Futur
 
 # Calculator
 
-This Python script creates a graphical user interface (GUI) application for a standard calculator. The application allows the user to perform basic arithmetic operations and includes several special functions. The GUI is built using the Tkinter library.
+This Python script code creates a graphical user interface (GUI) application for a standard calculator. The application allows the user to perform basic arithmetic operations and includes several special functions. The GUI is built using the Tkinter library.
 
 **Features**
 Basic Arithmetic Operations: Addition, subtraction, multiplication, division.
@@ -28,7 +28,7 @@ Button Bindings: The buttons change color on hover to improve user experience.
 
 # Number Guessing Game
 
-This Python script creates a graphical user interface (GUI) application for a number guessing game. The user is asked to guess a number between 1 and 100, and the application provides feedback on whether the guess is too high or too low until the correct number is guessed. The GUI is built using the Tkinter library.
+This Python script code creates a graphical user interface (GUI) application for a number guessing game. The user is asked to guess a number between 1 and 100, and the application provides feedback on whether the guess is too high or too low until the correct number is guessed. The GUI is built using the Tkinter library.
 
 **Features**
 
@@ -67,3 +67,53 @@ Feedback: The application updates the result label with feedback:
 ----> If the guess is too high or too low, a hint message is displayed, encouraging the user to try again.
 
 
+
+# Rock Paper Scissor Game
+
+Rock, Paper, Scissors Game
+This Python script code creates a graphical user interface (GUI) application for the classic game of Rock, Paper, Scissors. The user plays against the computer, and the game keeps track of the scores.
+
+**Features**
+
+Player and Computer Choices: The user can select rock, paper, or scissors by clicking the corresponding button.
+
+Random Computer Choice: The computer randomly selects rock, paper, or scissors.
+
+**Game Logic**: The game determines the winner based on the classic rules:
+**Rock beats scissors.
+Scissors beat paper.
+Paper beats rock.**
+
+-----> If the player's choice and the computer's choice are the same, it's a tie.
+-----> If the player's choice beats the computer's choice, the player wins.
+-----> Otherwise, the computer wins.
+
+
+Score Tracking: The game keeps track of the player's and computer's scores.
+
+Result Display: The game displays the choices made by the player and the computer, as well as the result of each round.
+
+Tkinter: This library is used to create the GUI. It provides various widgets such as labels, buttons, and frames to build the interface.
+
+Random Library: Utilized to generate the computer's choice randomly from "rock", "paper", or "scissors".
+
+**Main Components:**
+
+Labels: Used to display scores, player and computer choices, and results.
+
+Buttons: Used to capture the player's choice of rock, paper, or scissors.
+
+Play Method: This method is called when a player makes a choice. It determines the computer's choice, compares the two choices, updates the scores, and displays the result.
+
+
+**User Interaction**
+
+User Choice: The user selects rock, paper, or scissors by clicking the corresponding button.
+
+Computer Choice: The computer randomly selects rock, paper, or scissors.
+
+Result Determination: The game logic determines the winner based on the choices.
+
+Score Update: The scores for the player and the computer are updated accordingly.
+
+Display Results: The choices and results are displayed on the screen.
