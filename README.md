@@ -174,3 +174,39 @@ Win/Draw Check: After each move, the game checks if there is a winner or if the 
 Game Over: If a player wins or the game is a draw, the game displays the result and disables further moves until the reset button is clicked.
 
 Reset: Players can click the reset button to start a new game.
+
+
+# Snake Game
+This is a classic Snake game implemented using Python and the Pygame library. The objective is to control the snake to eat food and grow in length, while avoiding collisions with the walls or itself.
+
+**Features:**
+
+User Control: Use the arrow keys to control the direction of the snake.
+
+Food: Randomly placed on the screen, eating food increases the snake's length.
+
+Collision Detection: Game ends if the snake collides with the walls or itself.
+
+**Requirements:**
+Python 3.x
+Pygame library
+
+
+**How to Run:**
+Install Pygame: pip install pygame
+Run the script: python snake_game.py
+
+
+# Random Password Generator
+This is a Random Password Generator application created using Python and Tkinter. It allows users to generate strong and secure passwords with customizable length and character sets.
+
+**Features:**
+
+Customizable Length: Users can specify the length of the password.
+Character Sets: Users can include uppercase letters, lowercase letters, numbers, and special characters.
+GUI: User-friendly interface built with Tkinter.
+
+
+**Requirements:**
+Python 3.x
+Tkinter library (usually included with Python)
